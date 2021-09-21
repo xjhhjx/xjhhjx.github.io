@@ -66,17 +66,17 @@ body {/*body*/
 .logo1{/*头像盒子*/
     margin: auto;
     margin-top: -100px;
-    width: 14vw;
-    height: 14vw;
+    width: 20vw;
+    height: 20vw;
     /*background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
     box-shadow: 0px 0px 10px #ffffff;
     */
 }
 .logo2{/*头像*/
-    width: 14vw;
-    height: 14vw;
-    margin: 5px 5px;
+    width: 20vw;
+    height: 20vw;
+    margin: 1px 1px;
     border-radius: 50%;/*border-radius 属性是一个简写属性，用于设置四个 border-*-radius 属性。
     border: 2px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);/*box-shadow 属性向框添加一个或多个阴影。*/
