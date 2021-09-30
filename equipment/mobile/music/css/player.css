@@ -1,12 +1,11 @@
 /* 播放器大小 */
 .music-player {
-    width: 550px;
+    width: 100vw;
 }
 
 /* 播放器位置 */
 .music-player {
-    position: relative;
-    margin: 200px auto;
+width: 100%;
 }
 
 /* 歌曲列表 */
@@ -26,7 +25,7 @@
     color: #ccc;
     position: relative;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 50px;
     cursor: pointer;
 }
 
@@ -49,13 +48,16 @@
 
 /* 播放器主体 */
 .music-player__main {
-    height: 180px;
+    height: 40vh;
     padding: 25px;
     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+
+    left:0px; bottom:0px; width:100%;
+    position: fixed;
 }
 
 /* 播放器主体模糊背景 */
@@ -77,8 +79,8 @@
 /* 播放器唱片效果 */
 .music-player__disc {
     float: left;
-    width: 130px;
-    height: 130px;
+    width: 30vw;
+    height: 30vw;
     background: url(../images/cd.png) no-repeat center;
     background-size: 100%;
     position: relative;
@@ -86,7 +88,7 @@
 
 /* 唱片指针 */
 .music-player__pointer {
-    width: 25px;
+    width: 5vw;
     position: absolute;
     right: -10px;
     top: 0;
@@ -110,8 +112,8 @@
 
 /* 唱片歌曲图片 */
 .music-player__image {
-    width: 80px;
-    height: 80px;
+    width: 15vw;
+    height: 15vw;
     border-radius: 50%;
     position: absolute;
     overflow: hidden;
@@ -126,15 +128,15 @@
 /* 播放器控件 */
 
 .music-player__controls {
-    width: 330px;
-    height: 130px;
-    float: right;
+    width: 100%;
+    height: 20vh;
+    margin-top: 15vh;
 }
 
 /* 歌曲信息 */
 .music__info {
     width: 100%;
-    height: 50px;
+    height: 120px;
     margin-bottom: 15px;
 }
 
@@ -144,13 +146,13 @@
 }
 
 .music__info .music__info--title {
-    font-size: 16px;
+    font-size: 100px;
 }
 
 .music__info .music__info--singer {
     color: #ccc;
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 30px;
+    margin-top: 0px;
 }
 
 /* 控件 */
@@ -172,31 +174,32 @@
 
 .player-control__btn {
     float: left;
-    margin: 0 5px;
+    margin: 66px 20px;
     font-weight: bolder;
     color: #fff;
     cursor: pointer;
 }
 
 .player-control__volume {
+    width: 40vw;
     float: right;
     overflow: hidden;
 }
 
 .control__volume--progress {
     float: left;
-    width: 100px;
+    width: 260px;
     position: relative;
-    top: 8px;
+    top: 100px;
 }
 
 .player__song--timeProgess{
-    font-size: 12px;
+    font-size: 45px;
     color: #fff;
     margin-top: 5px;
     padding: 0px 3px;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .nowTime{
@@ -208,11 +211,11 @@
 
 .progress {
     background: rgba(0, 0, 0, 0.3);
-    height: 5px;
+    height: 28px;
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
     overflow: hidden;
-    border-radius: 2px;
+    border-radius: 10px;
     position: relative;
     cursor: pointer;
 }
@@ -220,13 +223,13 @@
 .progress .back {
     width: 0px;
     height: 100%;
-    border-radius: 2px;
+    border-radius: 10px;
     background: rgb(12, 182, 212);
 }
 
 .progress .pointer {
-    width: 7px;
-    height: 7px;
+    width: 35px;
+    height: 35px;
     background: #fff;
     border-radius: 50%;
     opacity: 0;
