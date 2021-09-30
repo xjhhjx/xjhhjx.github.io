@@ -48,7 +48,7 @@ body {/*body*/
 }
 .logo1{/*头像盒子*/
     margin: auto;
-    margin-top: 40px;
+    margin-top: 1vh;
     width: 44vw;
     height: 44vw;
     /*background-color: rgba(255, 255, 255, 0.4);
