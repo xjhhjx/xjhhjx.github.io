@@ -153,8 +153,9 @@ body {/*body*/
     align-items: center;
 }
 .dateTime{
-    width: 78vw;
+    width: 80vw;
     height: 5vw;
+    margin:5px;
     color: #ffffff;
     text-align: center;
     font-size: 4vw;
