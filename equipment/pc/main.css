@@ -163,6 +163,24 @@ body {/*body*/
     box-shadow: 0px 0px 12px #ffffff;
     transition: all 0.5s;
 }
+
+.f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dateTime{
+    width: 180px;
+    height: 20px;
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    background-color: rgba(71, 64, 64, 0.4);
+    box-shadow: 0px 0px 12px #ffffff;
+}
+
+
 .footer{/*页脚*/
     position: absolute;
 
