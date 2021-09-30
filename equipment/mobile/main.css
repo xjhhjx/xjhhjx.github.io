@@ -128,7 +128,7 @@ body {/*body*/
 .button1{/*按钮*/
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 20px;
+    margin-top: 1vh;
     height: 20vw;
     width: 80vw;
     border: 1px solid rgba(255, 255, 255, 0.4);
