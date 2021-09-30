@@ -6,17 +6,11 @@ body {/*body*/
     font-family: 'Quicksand', sans-serif;/*字体quicksand和宋体*/
     padding:0;
     margin:0;
+
   }
-.bg{
-    background-image: url(http://tiebapic.baidu.com/forum/pic/item/23f05fddd100baa19093b2500210b912cafc2ee9.jpg);
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-size:444%;
-    background-position:40% 20% ;
-}
 /*整个网页中的内容*/
 .bg{/*放内容的盒子*/
-    top: 0 ;left: 0;
+    top: 30vw ;left: 0;
     width: 100%;
     height: 100%;
     min-height: 100vh;/*设置段落的最小高度  注：height:100vh == height:100%;
@@ -30,7 +24,28 @@ body {/*body*/
     justify-content: center;/*justify-content : center;元素在主轴（页面）上居中排列*/
     align-items:flex-start;/*弹性盒子元素在该行的侧轴（纵轴）上居中放置。（居中对齐）*/
 }
+.background{/*深层背景*/
+    top: 0; left: 0;
+    background-position: 1200px 0px;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url("http://tiebapic.baidu.com/forum/pic/item/23f05fddd100baa19093b2500210b912cafc2ee9.jpg");
+    background-size: 120% 120%;
+    position: absolute;
+    z-index: -5;/*深度设置*/
+}
 
+.background2{/*浅层背景*/
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url("http://tiebapic.baidu.com/forum/pic/item/066c6a10728b4710d990082786cec3fdfe0323e9.jpg");
+    background-size: 120% 120%;
+    position: absolute;
+    z-index: -4;
+}
 .yinghua{/*樱花*/
     top: 0; left: 0;
     width: 100%;
@@ -42,12 +57,13 @@ body {/*body*/
 }
 
 
+
 .profile{/*内容*/
     z-index: 0;
 }
 .logo1{/*头像盒子*/
     margin: auto;
-    margin-top: 40px;
+    margin-top: -100px;
     width: 44vw;
     height: 44vw;
     /*background-color: rgba(255, 255, 255, 0.4);
@@ -128,7 +144,6 @@ body {/*body*/
 .button1{/*按钮*/
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 20px;
     height: 20vw;
     width: 80vw;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -145,25 +160,6 @@ body {/*body*/
     box-shadow: 0px 0px 12px #ffffff;
     transition: all 0.5s;
 }
-
-.f{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.dateTime{
-    width: 78vw;
-    height: 5vw;
-    color: #ffffff;
-    text-align: center;
-    font-size: 4vw;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 25px;
-    background-color: rgba(71, 64, 64, 0.4);
-    box-shadow: 0px 0px 12px #ffffff;
-}
-
-
 .footer{/*页脚*/
     position: absolute;
 
