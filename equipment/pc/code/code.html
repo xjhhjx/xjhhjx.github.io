@@ -190,7 +190,7 @@
     if(((l.head-l.tail) < l.size)&&(l.head-l.tail)>0){l.data[l.tail]=0;++(l.tail);printf("del ok\n");}
     else{printf("del error\n");}
 
-    void print(sq &l){
+    void print(sq l){
     while(l.head != l.tail){printf("%d\n",l.data[l.tail]);++(l.tail);}
 
     int main(){
