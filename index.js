@@ -19,9 +19,9 @@ if (os.isAndroid || os.isPhone) {
 window.location.href="equipment/mobile/moindex.html";
 //alert("手机" );
 } else if (os.isTablet) {
-window.location.href="01/index.html";
+window.location.href="equipment/pc/pcindex.html";
 //alert("平板" );
 } else if (os.isPc) {
-window.location.href="";
+window.location.href="equipment/pc/pcindex.html";
 //alert("电脑" )
 }
