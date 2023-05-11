@@ -105,6 +105,10 @@
     <form action="calculator.jsp" method="post">
         <p>随机数1：<%= Math.floor(Math.random() * 100) %></p>
         <p>随机数2：<%= Math.floor(Math.random() * 100) %></p>
+        <%--传参版
+        随机数1：<input type="text" name="num1" value="<%= Math.floor(Math.random() * 100) %>">
+        随机数2：<input type="text" name="num2" value="<%= Math.floor(Math.random() * 100) %>">
+        --%>
         <p>选择运算符：
             <select name="operator">
                 <option value="+">加</option>
@@ -147,10 +151,16 @@
     <% String operator = request.getParameter("operator"); %>
     <% int num1 = (int) Math.floor(Math.random() * 100); %>
     <% int num2 = (int) Math.floor(Math.random() * 100); %>
-
+    <%--传参版
+    <% float num1 = Float.valueOf(request.getParameter("num1")).floatValue(); %>
+    <% float num2 = Float.valueOf(request.getParameter("num2")).floatValue(); %>
+    --%>
     <%-- 计算结果 --%>
     <%
         int result = 0;
+        <%--传参版
+        float result = 0;
+        --%>
         switch (operator) {
             case "+":
                 result = num1 + num2;
