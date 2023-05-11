@@ -16,7 +16,8 @@ var os = function (){
 	};
 }();
 if (os.isAndroid || os.isPhone) {
-window.location.href="equipment/mobile/moindex.html";
+// window.location.href="equipment/mobile/moindex.html";
+window.location.href="equipment/pc/pcindex.html";
 //alert("手机" );
 } else if (os.isTablet) {
 window.location.href="equipment/pc/pcindex.html";
