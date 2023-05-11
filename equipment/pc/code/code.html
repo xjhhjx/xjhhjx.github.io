@@ -1,74 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-ch">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>code</title>
     <style>
-    html {
-    position: relative;
-    overflow:auto;
-}
-    body {/*body*/
-    height:1000px;
-    padding:0;
-    margin:0;
-    background-image: linear-gradient(to bottom right,green, yellow);
-    }
-    .b{
-        margin-left: 100px;
+        html {
+            position: relative;
+            overflow: auto;
+        }
 
-    }
-    .button2{
-        background-color: aqua;
-        text-align: center;
-        width: 200px;
-        border-radius: 30px;
-        font-size: 50px;
-        margin-top: 100px;
-    }
-    .button3{
-        background-color: aqua;
-        text-align: center;
-        width: 200px;
-        border-radius: 30px;
-        font-size: 50px;
-        margin-top: 100px;
-        margin-left: 400px;
-    }
-    .text{
-        background-color: aqua;
-        width: 600px;
-        height:1500px;
-        border-radius: 30px;
-        font-size: 10px;
-        text-align: left;
-        margin-top: auto;
-    }
-    .text2{
-        background-color: aqua;
-        width: 600px;
-        height: 1500px;
-        border-radius: 30px;
-        font-size: 10px;
-        text-align: left;
-        margin-top: -1510px;
-        margin-left: 620px;
-    }
+        body {
+            /*body*/
+            height: max-content;
+            padding: 0;
+            margin: 0;
+            background-image: linear-gradient(to bottom right, green, yellow);
+        }
+
+        .b {
+            margin-left: 100px;
+
+        }
+
+        .button2 {
+            background-color: aqua;
+            text-align: center;
+            width: 400px;
+            border-radius: 30px;
+            font-size: 50px;
+            margin-top: 100px;
+        }
+
+        .button3 {
+            background-color: aqua;
+            text-align: center;
+            width: 400px;
+            border-radius: 30px;
+            font-size: 50px;
+            margin-top: 100px;
+        }
+
+        .button4 {
+            background-color: aqua;
+            text-align: center;
+            width: 400px;
+            border-radius: 30px;
+            font-size: 50px;
+            margin-top: 100px;
+        }
+
+        .text {
+            background-color: aqua;
+            width: max-content;
+            height: max-content;
+            border-radius: 30px;
+            font-size: 20px;
+            text-align: left;
+            margin-top: 0px;
+        }
+
+        .text2 {
+            background-color: aqua;
+            width: max-content;
+            height: max-content;
+            border-radius: 30px;
+            font-size: 20px;
+            text-align: left;
+            margin-top: 0px;
+        }
+        .text3 {
+            background-color: aqua;
+            width: max-content;
+            height: max-content;
+            border-radius: 30px;
+            font-size: 20px;
+            text-align: left;
+            margin-top: 0px;
+        }
     </style>
 </head>
+
 <body>
-<div class="a">
-    <div class="b">
-        <button class="button2" onclick="">4.jsp</button>
-        <button class="button3" onclick="">calculator.jsp</button>
-        <button class="button4" onclick="">history.jsp</button>
-        <div class="text">
-           <pre>
+    <div class="a">
+        <div class="b">
+            <button class="button2" onclick="">4.jsp</button>
+
+            <div class="text">
+                <pre>
             <script type="text/html" style="display: block;">
-   
-    <%@ page language="java" contentType="text/html; charset=UTF-8"
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -98,14 +122,16 @@
 </body>
 </html>
 
-  
+
             </script>
             </pre>
-        </div>
-        <div class="text2">
-            <pre>
+            </div>
+            <button class="button3" onclick="">calculator.jsp</button>
+
+            <div class="text2">
+                <pre>
                  <script type="text/html" style="display: block;">
-   
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.List" import="java.util.ArrayList"%>
 <!DOCTYPE html>
@@ -162,9 +188,53 @@
 
                  </script>
             </pre>
+            </div>
+            <button class="button4" onclick="">history.jsp</button>
+            <div class="text3">
+                <pre>
+                 <script type="text/html" style="display: block;">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.List" import="java.util.ArrayList"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>历史记录</title>
+</head>
+<body>
+    <h1>历史记录</h1>
+    <%-- 获取历史记录 --%>
+    <% List<String[]> history = (List<String[]>) application.getAttribute("history"); %>
+    <%-- 显示历史记录表格 --%>
+    <table border="1">
+        <tr>
+            <th>随机数1</th>
+            <th>运算符</th>
+            <th>随机数2</th>
+            <th>结果</th>
+        </tr>
+        <% if (history != null) {
+                for (String[] record : history) { %>
+                    <tr>
+                        <td><%= record[0] %></td>
+                        <td><%= record[1] %></td>
+                        <td><%= record[2] %></td>
+                        <td><%= record[3] %></td>
+                    </tr>
+            <% } } %>
+    </table>
+    <form action="4.jsp" method="get">
+        <input type="submit" name="submit" value="返回">
+    </form>
+</body>
+</html>
+
+
+            </script>
+            </pre>
+            </div>
         </div>
     </div>
-</div>
-
 </body>
+
 </html>
