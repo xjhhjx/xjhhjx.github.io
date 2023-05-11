@@ -61,152 +61,104 @@
 <body>
 <div class="a">
     <div class="b">
-        <button class="button2" onclick="">链表</button>
-        <button class="button3" onclick="">队列</button>
+        <button class="button2" onclick="">4.jsp</button>
+        <button class="button3" onclick="">calculator.jsp</button>
+        <button class="button4" onclick="">history.jsp</button>
         <div class="text">
            <pre>
             <script type="text/html" style="display: block;">
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <malloc.h
-    typedef struct LNode{
-        int data;
-        struct LNode *next;
-    } LNode ,*LinkList
-    void creat_list(int n,LNode* &L){
-        int i=0;
-        LNode* p=(LNode*)malloc(sizeof(LNode));
-        p->data=n;
-        p->next=NULL;
-        L=p;
-        while(i < n){
-        LNode* q=(LNode*)malloc(sizeof(LNode));
-        q->data=100-i;
-        p->next=q;
-        p=q;
-        i++;
-        }
-        p->next=NULL;
-        printf("creat ok\n");
+   
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>四则运算</title>
+</head>
+<body>
+    <h1>四则运算</h1>
+    <form action="calculator.jsp" method="post">
+        <p>随机数1：<%= Math.floor(Math.random() * 100) %></p>
+        <p>随机数2：<%= Math.floor(Math.random() * 100) %></p>
+        <p>选择运算符：
+            <select name="operator">
+                <option value="+">加</option>
+                <option value="-">减</option>
+                <option value="*">乘</option>
+                <option value="/">除</option>
+            </select>
+        </p>
+        <input type="submit" name="submit" value="计算结果">
+    </form>
 
-    void print_list(LNode* L){
-        L=L->next;
-        while(L!=NULL){
-        printf("%d",L->data);
-        L=L->next;
-        printf("\n");
-        }
-        printf("print ok\n");
-    }
-    int insert_list(int n,int o,LNode* &L){
-        if(n<0||n>L->data){printf("error please try other\n");return 0;/*exit(0);*/}
-        LNode* p=(LNode*)malloc(sizeof(LNode));
-        int i=0;
-        LNode* q=L;
-        while(i - n != 0){
-        q=q->next;
-        i++;
-        }
-        p->next=q->next;
-        q->next=p;
-        p->data=o;
-        (L->data)+=1;
-        return 0;
-    }
-    int delete_list(int n,LNode* &L){
-        if(n<=0||n>L->data){printf("error please try other\n");return 0;/*exit(0);*/}
-        int i=0;
-        LNode *q=L;
-        LNode *p=q;
-        while(i - n != 0){
-        p=q;
-        q=q->next;
-        i++;
-        }
-        p->next=q->next;
-        q->next=NULL;
-        free(q);
-        printf("delete ok\n");
-        return 0;
+    <form action="history.jsp" method="get">
+        <input type="submit" name="submit" value="查看历史记录">
+    </form>
+</body>
+</html>
 
-    int main(){
-    int i=1;LNode* L;
-    while(0<i<5){
-        switch(i){
-        case 1:{int m=0,n=0;printf("input the number of a new linklist\n");
-        scanf("%d",&m);creat_list(m,L);break;}
-        case 2:{int m=0,n=0;printf("input twe numbers,and previous is the position,the lastter is the data\n");
-        scanf("%d %d",&m,&n);insert_list(m,n,L);break;}
-        case 3:{int m=0,n=0;printf("input a munber to delete the data in this position\n");
-        scanf("%d",&m);delete_list(m,L);break;}
-        case 4:{print_list(L);break;}
-            }
-        printf("input a number:1 create,2 insert,3 delete,4 print,input other number to exit the program\n");
-        scanf("%d",&i);
-    }
-    return 0;
-    }
-    /*
-    int main(){
-    LNode* L;
-    int m,n;
-    scanf("%d",&m);
-    creat_list(m,L);
-    print_list(L);
-    scanf("%d %d",&m,&n);
-    insert_list(m,n,L);
-    print_list(L);
-    scanf("%d",&m);
-    delete_list(m,L);
-    print_list(L);
-    printf("end\n");
-    return 0;
-    }*/
+  
             </script>
             </pre>
         </div>
         <div class="text2">
             <pre>
                  <script type="text/html" style="display: block;">
-    #include <stdio.h>
-    #include <malloc.h>
-    typedef int qelemtype;
-    typedef struct {
-        qelemtype *data;
-        int head;
-        int tail;
-        int size;
-    }
-    void init_sq(int number,sq &l){
-    if(l.data != NULL){	l.data=(qelemtype*)malloc(sizeof(qelemtype)*number);l.size=number;l.head=l.tail=0;
-        printf("init ok\n");
-    }else{l.data=NULL;l.head=l.tail=l.size=0;init_sq(number,l);}
+   
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.List" import="java.util.ArrayList"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>计算结果</title>
+</head>
+<body>
+    <h1>计算结果</h1>
 
-    void add(int elem,sq &l){
-    if((l.head-l.tail) < l.size){l.data[((l.head)%5)]=elem;++(l.head);printf("add ok\n");}
-    else{printf("add error\n");}
+    <%-- 获取表单数据 --%>
+    <% String operator = request.getParameter("operator"); %>
+    <% int num1 = (int) Math.floor(Math.random() * 100); %>
+    <% int num2 = (int) Math.floor(Math.random() * 100); %>
 
-    void del(sq &l){
-    if(((l.head-l.tail) < l.size)&&(l.head-l.tail)>0){l.data[l.tail]=0;++(l.tail);printf("del ok\n");}
-    else{printf("del error\n");}
+    <%-- 计算结果 --%>
+    <%
+        int result = 0;
+        switch (operator) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;
+            default:
+                break;
+        }
+    %>
 
-    void print(sq l){
-    while(l.head != l.tail){printf("%d\n",l.data[l.tail]);++(l.tail);}
+    <%-- 将计算结果存储到历史记录中 --%>
+    <% List<String[]> history = (List<String[]>) application.getAttribute("history"); %>
+    <% if (history == null) {
+            history = new ArrayList<String[]>();
+        }
+        String[] record = {String.valueOf(num1), operator, String.valueOf(num2), String.valueOf(result)};
+        history.add(record);
+        application.setAttribute("history", history);
+    %>
 
-    int main(){
-    sq l;int i=1;
-    while(1){
-    switch(i){
-    case 1:{int m=0;printf("input the number of a new sq\n");scanf("%d",&m);init_sq(m,l);break;}
-    case 2:{int m=0;printf("input a number to add to the head\n");scanf("%d",&m);add(m,l);break;}
-    case 3:{int m=0;printf("input a munber to delete the tail's data \n");del(l);break;}
-    case 4:{print(l);break;}}
-    printf("input a number:1 create,2 add3 delete,4 print,input other number to exit the program\n");
-    scanf("%d",&i);
-    if(i!=1&&i!=2&&i!=3&&i!=4){break;}
-                }
-    return 0;}
-
+    <%-- 显示计算结果 --%>
+    <p><%= num1 %> <%= operator %> <%= num2 %> = <%= result %></p>
+    <form action="4.jsp" method="get">
+        <input type="submit" name="submit" value="返回">
+    </form>
+</body></html>
 
                  </script>
             </pre>
